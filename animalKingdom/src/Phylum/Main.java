@@ -9,6 +9,7 @@ public class Main {
 	public static void main(String[] args) {
 		List<Animals> zoo = new ArrayList<>();
 		List<Animals> alphaZoo = new ArrayList<>();
+		List<Animals> moveZoo = new ArrayList<>();
 		List<Animals> yearZoo = new ArrayList<>();
 		
 		// Animals{id=0, name='Name', yearName=YYYY}
@@ -58,43 +59,12 @@ public class Main {
 		Fish perch = new Fish("Perch", 1758);
 		zoo.add(perch);
 		
-		System.out.println(zoo);
+		//System.out.println(zoo);
 		
-		alphaZoo.add(panda);
-		alphaZoo.add(zebra);
-		alphaZoo.add(koala);
-		alphaZoo.add(sloth);
-		alphaZoo.add(armadillo);
-		alphaZoo.add(raccoon);
-		alphaZoo.add(bigfoot);
-		alphaZoo.add(pigeon);
-		alphaZoo.add(peacock);
-		alphaZoo.add(toucan);
-		alphaZoo.add(parrot);
-		alphaZoo.add(swan);
-		alphaZoo.add(salmon);
-		alphaZoo.add(catfish);
-		alphaZoo.add(perch);
-		
-		//myList.sort((v1, v2) -> v1.getName().compareToIgnoreCase(v2.getName()));
-		alphaZoo.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
-		alphaZoo.forEach((anm) -> System.out.println(anm.getName()));
-		
-		yearZoo.add(panda);
-		yearZoo.add(zebra);
-		yearZoo.add(koala);
-		yearZoo.add(sloth);
-		yearZoo.add(armadillo);
-		yearZoo.add(raccoon);
-		yearZoo.add(bigfoot);
-		yearZoo.add(pigeon);
-		yearZoo.add(peacock);
-		yearZoo.add(toucan);
-		yearZoo.add(parrot);
-		yearZoo.add(swan);
-		yearZoo.add(salmon);
-		yearZoo.add(catfish);
-		yearZoo.add(perch);
+		for(Animals i : zoo) {
+			alphaZoo.add(i);
+			yearZoo.add(i);
+		}
 		
 		/*
 		List<AbstractVehicle> filteredList = filterVehicle(myList, v -> v.getFuelLevel() < 0);
@@ -105,12 +75,23 @@ public class Main {
         filteredList = filterVehicle(myList, v -> (v.getFuelLevel() > 0) && (v instanceof HorseFromVehicle));
         filteredList.forEach((v) -> System.out.println(v));
 		*/
-		System.out.println();
+		System.out.println("\nI checked with the instructor, John Mitchell. He prefers the format below over what's shown in the git-repo");
+		System.out.println("*** List all the animals in descending order by year named ***");
 		yearZoo.sort((a1, a2) -> a2.getYear() - a1.getYear());
-		yearZoo.forEach((a) -> System.out.println(a.getName() + ", " + a.getYear()));
+		yearZoo.forEach((a) -> System.out.println("ID: " + a.animalId + ", " + a.getName() + ", " + a.getYear()));
 		
+		//myList.sort((v1, v2) -> v1.getName().compareToIgnoreCase(v2.getName()));
+		System.out.println("\n*** List all the animals alphabetically ***");
+		alphaZoo.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+		alphaZoo.forEach((anm) -> System.out.println("ID: " + anm.animalId + ", " + anm.getName() + ", " + anm.getYear()));
 		
+		for(Animals i : alphaZoo) {
+			moveZoo.add(i);
+		}
 		
+		System.out.println("\n*** List all the animals order by how they move ***");
+		moveZoo.sort((m1, m2) -> m1.move().compareToIgnoreCase(m2.move()));
+		moveZoo.forEach((mv) -> System.out.println("ID: " + mv.animalId + ", " + mv.getName() + ", " + mv.getYear() + ", " + mv.move()));
 		
 		
 		
