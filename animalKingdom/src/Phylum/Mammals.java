@@ -18,7 +18,7 @@ public class Mammals extends Animals {
 	}
 	
 	@Override
-	public String fornicate() {
+	public String reproduce() {
 		return "Live Birth";
 	}
 	

@@ -17,7 +17,7 @@ abstract class Animals {
 	abstract int getYear();
 	abstract String move();
 	abstract String breathe();
-	abstract String fornicate();
+	abstract String reproduce();
 	
 	String eatFood() {
 		return "";

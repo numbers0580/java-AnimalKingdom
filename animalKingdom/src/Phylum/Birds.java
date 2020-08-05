@@ -18,7 +18,7 @@ public class Birds extends Animals {
 	}
 	
 	@Override
-	public String fornicate() {
+	public String reproduce() {
 		return "Eggs";
 	}
 	
