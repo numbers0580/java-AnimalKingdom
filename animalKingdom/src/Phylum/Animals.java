@@ -11,7 +11,7 @@ abstract class Animals {
 	
 	public Animals() {
 		id++;
-	};
+	}
 	
 	abstract String getName();
 	abstract int getYear();
@@ -20,6 +20,6 @@ abstract class Animals {
 	abstract String reproduce();
 	
 	String eatFood() {
-		return "";
+		return "By biting, chewing, swallowing, and digesting.";
 	}
 }
